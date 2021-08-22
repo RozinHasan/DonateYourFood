@@ -40,11 +40,6 @@
 
     <string name="back4app_server_url">https://parseapi.back4app.com/</string>
 
-    <!-- Change the following strings as required -->
-<!--    <string name="back4app_app_id">p1Iq82yYjSwdg0uaLYgG5NNQxuF5yqqV0Vldza3N</string>-->
-<!--    <string name="back4app_client_key">fE8VCCELl41acNOtAk8kyL8WxVsSJZ55sFSiaRv5</string>-->
-<!--    <string name="gcm_sender_id">972450364806</string>-->
-
     <string name="back4app_app_id">lLFs7SfIanB6GnKzZQS3FeyFNsYw0qpMMuLZIoju</string>
     <string name="back4app_client_key">mkgnO3Y1SVJp4DKPTGnJ1IJte5cl1oHJh6T3RkSd</string>
     <string name="gcm_sender_id">895840217533</string>

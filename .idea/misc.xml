@@ -4,10 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_face_orange.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_send_black_24dp.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/activity_chat.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/activity_food_posting.xml" value="0.10666666666666667" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/activity_home.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/activity_main.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/app_bar.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/chat_item_rcv.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/chat_item_sent.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/fragment_donor.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/fragment_recipient.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/item_chat.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/item_donor.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/item_reciepent.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/menu/food_posting.xml" value="0.1796875" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/menu/home.xml" value="0.1796875" />
       </map>
     </option>
   </component>

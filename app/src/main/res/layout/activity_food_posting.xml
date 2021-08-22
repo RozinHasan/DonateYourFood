@@ -69,7 +69,7 @@
                     android:inputType="number"
                     android:ems="10"
                     android:maxLength="10"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="#6B6B6B"
                     android:id="@+id/peoplenum"
                     android:layout_alignTop="@+id/DRpeople"
                     android:layout_toRightOf="@+id/DRpeople"
@@ -80,10 +80,10 @@
 
 
             <EditText
+                android:id="@+id/DRname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/approx"
-                android:id="@+id/DRname"
                 android:hint="@string/name_hint"
                 android:textSize="16sp" />
 

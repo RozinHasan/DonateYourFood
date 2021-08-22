@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="text"
-        android:textColor="#00AAEA"
+        android:textColor="#6B6B6B"
         android:textSize="14sp"
         android:layout_alignRight="@+id/v1"
         android:layout_below="@+id/v1"

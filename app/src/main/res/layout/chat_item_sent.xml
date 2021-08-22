@@ -11,7 +11,6 @@
         android:id="@+id/v1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_marginLeft="10dp"
         android:background="@drawable/sender_bg"
         android:gravity="center_vertical"
@@ -19,7 +18,10 @@
         android:paddingBottom="5dp"
         android:paddingLeft="15dp"
         android:paddingRight="10dp"
-        android:paddingTop="5dp" >
+        android:paddingTop="5dp"
+        android:paddingStart="15dp"
+        android:layout_marginStart="10dp"
+        android:paddingEnd="10dp">
 
         <TextView
             android:id="@+id/lbl1"
@@ -43,11 +45,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="textvdv"
-        android:textColor="#328FC0"
+        android:textColor="#6B6B6B"
         android:textSize="14sp"
-        android:layout_alignRight="@+id/v1"
-        android:layout_below="@+id/v1"
         android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
-        />
+        android:layout_marginEnd="20dp" />
 </LinearLayout>
