@@ -1,0 +1,170 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FoodPosting">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/radioGroupDR">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donor_radio_lable"
+                android:id="@+id/radioDonor"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recipient_radio_lable"
+                android:id="@+id/radioRecipient"
+                android:layout_below="@+id/radioDonor"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+
+
+        <RelativeLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:id="@+id/approx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="40dp"
+                android:paddingBottom="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/DRpeople"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/numpeople_hint"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerInParent="true"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/peoplenum"
+                    android:layout_alignTop="@+id/DRpeople"
+                    android:layout_toRightOf="@+id/DRpeople"
+                    android:layout_toEndOf="@+id/DRpeople"
+                    android:textSize="16sp"/>
+
+            </RelativeLayout>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/approx"
+                android:id="@+id/DRname"
+                android:hint="@string/name_hint"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:ems="10"
+                android:id="@+id/DRaddress"
+                android:layout_below="@+id/DRname"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/address_hint"
+                android:textSize="16sp"
+                android:textIsSelectable="false" />
+
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/cities"
+                android:prompt="@string/city_prompt"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/DRzipcode"
+                android:layout_below="@+id/DRaddress"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/zipcode_hint"
+                android:textSize="16sp"
+                android:maxLength="5"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:ems="10"
+                android:id="@+id/DRphone"
+                android:layout_below="@+id/DRzipcode"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/phone_hint"
+                android:textSize="16sp"
+                android:maxLength="14"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/post_submit_text"
+                android:id="@+id/post_button"
+                android:layout_below="@+id/DRphone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="53dp"
+                android:textSize="16sp"
+                style="@style/Widget.MaterialComponents.Button"
+                android:background="@color/colorPrimary"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3ef3f3f"
+            android:id="@+id/datetext"
+            android:textSize="16sp"
+            android:layout_alignParentBottom="true"
+            android:padding="20dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

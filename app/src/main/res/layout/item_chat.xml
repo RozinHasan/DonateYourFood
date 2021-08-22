@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/msg_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp">
+    <ImageView
+        android:id="@+id/ivProfileOther"
+        android:contentDescription="@string/iC_profile_other"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:srcCompat="@drawable/ic_face_orange" />
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/tvBody"
+        android:padding="20dp"
+        android:lines="1"
+        android:text="kjdskdvnkjsdbvnkj"
+        android:ellipsize="end"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_weight="1"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/reciever_bg"><!-- This line is added to support marginEnd on devices with API less than 17 -->
+    </TextView>
+    <ImageView
+        android:id="@+id/ivProfileMe"
+        android:contentDescription="@string/iC_profile_me"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:srcCompat="@drawable/ic_face_blue"/>
+</LinearLayout>

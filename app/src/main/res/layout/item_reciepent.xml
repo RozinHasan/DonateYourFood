@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/card_background_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/reciever_postedBy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reciever"
+            style="@style/TextAppearance.AppCompat.Title"/>
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/reciever_ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="20dp"
+            android:maxHeight="40dp"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="0.1"
+            android:isIndicator="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+
+        <TextView
+            android:id="@+id/recipient_organization_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ashar Alo"
+            style="@style/TextAppearance.AppCompat.Title"/>
+
+        <TextView
+            android:id="@+id/recipient_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uttara"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/recipient_zipcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Zip code : 90890"/>
+
+                <TextView
+                    android:id="@+id/recipient_people_approx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Approximate people :60"/>
+
+                <TextView
+                    android:id="@+id/recipient_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phone :018883535"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/recipient_accpetBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Accept"
+                    android:background="@android:drawable/btn_default"/>
+
+                <Button
+                    android:id="@+id/recipient_accpetStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat"
+                    android:gravity="center"
+                    android:background="@android:drawable/btn_default"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/recipient_incomingMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Imcoming Message"
+                    android:gravity="center"
+                    android:background="@android:drawable/btn_default"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/icon_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_access_time_black_24dp"/>
+
+            <TextView
+                android:id="@+id/recipient_posting_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posting time : 19 jun 2019"
+                android:layout_toRightOf="@id/icon_timer"
+                android:layout_marginLeft="10dp"/>
+
+
+        </RelativeLayout>
+
+<!--        <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#e0e0e0"-->
+<!--        android:layout_marginTop="10dp"/>-->
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

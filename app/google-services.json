@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "895840217533",
+    "project_id": "donation-67c30",
+    "storage_bucket": "donation-67c30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895840217533:android:9b1698d4077a9e34764ad4",
+        "android_client_info": {
+          "package_name": "com.rozin.donateyourfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895840217533-nf3kmtuord3m27bqgceftthe63b8lov5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rozin.donateyourfood",
+            "certificate_hash": "13b39a9a1723fdb18b1182460368360973a5e5a1"
+          }
+        },
+        {
+          "client_id": "895840217533-ucasol748dkrt973em4g1td4giitnpp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQFe67rdHSHwHlHgi8m1ruu-amsLie3bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895840217533-ucasol748dkrt973em4g1td4giitnpp8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
