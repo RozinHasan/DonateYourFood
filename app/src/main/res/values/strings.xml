@@ -19,8 +19,8 @@
     <string name="title_post">FoodPost</string>
     <string name="empty_donor_list">No new Donors!</string>
     <string name="empty_recipient_list">No new Recipients!</string>
-    <string name="donor_radio_lable">I am a Donor organization</string>
-    <string name="recipient_radio_lable">I am a Recipient organization</string>
+    <string name="donor_radio_lable">I am a Donor</string>
+    <string name="recipient_radio_lable">I am a Recipient</string>
     <string name="address_hint">Address</string>
     <string name="name_hint">Organization Name</string>
     <string name="zipcode_hint">Zip Code</string>
