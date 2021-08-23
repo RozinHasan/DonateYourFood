@@ -1,5 +1,5 @@
  # Community driven food donation platform
- My little contribution to help food wastage by creating a simple android app to create a community of giving and helping in order to reduce food wastage.
+ My little effort to help reduce food wastage by creating a simple android app to create a community of giving and helping in order to reduce food wastage.
  
  
  # Installation
