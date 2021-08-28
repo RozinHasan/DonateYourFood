@@ -21,7 +21,7 @@ People can sign up using their email to either donate their excess food or recei
 
 # **Form Screen**
 
-You can create a food as either a food donator or a food receiver
+You can create a food post as either a food donator or a food receiver
 
 <img src="images/form.jpg" width = "200">
 
@@ -34,7 +34,7 @@ Tabview showing all the posts in different regions about either people wanting t
 
 # **In app messaging**
 
-After a post has been accepted by a user, that user and the poster can communicate directly in the app by using the in app messaging
+After a post has been accepted by a user, that user and the poster can communicate directly in the app by using the in app messaging. The messaging feature is built from scratch.
 
 <img src = "images/message.jpg" width = "200">
 
