@@ -10,7 +10,7 @@
    - copy the application id and client key and paste them in the strings.xml file in the project
    - sync the app and then build, voila!
   
-   I am still working on push notifications, so the firebase dependencies are currently not in use
+   Push notification work is in progress
  
 # **Login / Signup Screen**
 
