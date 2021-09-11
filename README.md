@@ -9,9 +9,7 @@
    - go to app settings from the project dashboard and click on security and keys
    - copy the application id and client key and paste them in the strings.xml file in the project
    - sync the app and then build, voila!
-  
-   Push notification work is in progress
- 
+   
 # **Login / Signup Screen**
 
 People can sign up using their email to either donate their excess food or receive the excess food donated by others.
