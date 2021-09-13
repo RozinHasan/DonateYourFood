@@ -107,12 +107,13 @@ class FoodPosting : AppCompatActivity() {
                 val progressDialog = ProgressDialog(this);
 //                progressDialog.setMessage("Posting your data to the server..."); // Setting Message
                 progressDialog.setTitle("Please wait"); // Setting Title
-                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+//                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
                 progressDialog.show(); // Display Progress Dialog
                 progressDialog.setCancelable(false);
 
                 //submit
-                fulldetail = drname + "\n" + draddress + "\n" + drzipcode + "\n" + "Phone: " + drphone + "\n" + "Approximate People: " + drnumpeople + "\n" + "Post Time: " + postdate
+                fulldetail =
+                    "$drname\n$draddress\n$drzipcode\nPhone: $drphone\nApproximate People: $drnumpeople\nPost Time: $postdate"
                 Log.d("fulldetail", fulldetail)
                 val postingdata = ParseObject("foodtable")
                 postingdata.put("name", drname) //string
@@ -164,16 +165,15 @@ class FoodPosting : AppCompatActivity() {
 
     }
 
-    private fun generateUid():String {
-        val time = Time()
-        time.setToNow()
-        return  java.lang.Long.toString(time.toMillis(false))
-    }
+//    private fun generateUid():String {
+//        val time = Time()
+//        time.setToNow()
+//        return time.toMillis(false).toString()
+//    }
 
     private fun showErrorDialog(e:ParseException){
         val builder2 = AlertDialog.Builder(this@FoodPosting)
         builder2.setMessage(e.message)
-                .setTitle(R.string.signup_error_title)
                 .setPositiveButton(android.R.string.ok, null)
         val dialog2 = builder2.create()
         dialog2.show()
@@ -203,7 +203,6 @@ class FoodPosting : AppCompatActivity() {
         json.title = title
         json.message = message
         json.iconUrl = "https://imgur.com/wZFGvTV"
-//        json.iconUrl = "https://imgur.com/wZFGvTV"
 
         val service = RetrofitBuilder.buildRetrofit().create(ApiService::class.java)
 
@@ -220,7 +219,7 @@ class FoodPosting : AppCompatActivity() {
                     val dataList = response.body()
                     if (dataList != null) {
                         if (dataList.success == 1L){
-                            Log.e("Notify to all user sucess msg id =:", dataList.multicastId.toString())
+                            Log.e("Notify to all user success msg id =:", dataList.multicastId.toString())
                         }
                     }
 
@@ -251,7 +250,7 @@ class FoodPosting : AppCompatActivity() {
                     Log.e("Firebase msg response :",  GsonBuilder().setPrettyPrinting().create().toJson(response))
                     val dataList = response.body()
                     if (dataList != null) {
-                            Log.e("Notify to all user sucess =:", "")
+                            Log.e("Notify to all user success =:", "")
                     }
 
                 } else {
@@ -284,7 +283,7 @@ class FoodPosting : AppCompatActivity() {
                 for (postingdata in mTokens) {
                     mtokens[i] = postingdata.getString("token")
                     builder.append(mtokens[i]).append(",")
-                    mtokens[i]?.let { Log.e("token"+ i.toString(), it) }
+                    mtokens[i]?.let { Log.e("token$i", it) }
 
                     if (!tokenList.contains(mtokens[i])){
                         if (mtokens[i] != mytoken){

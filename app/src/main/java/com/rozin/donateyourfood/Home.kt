@@ -3,12 +3,10 @@ package com.rozin.donateyourfood
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.text.Html
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.Window
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
@@ -18,8 +16,6 @@ import com.google.android.material.tabs.TabLayout
 import com.parse.ParseUser
 import com.rozin.donateyourfood.adapter.TabAdapter
 import com.rozin.donateyourfood.utils.MyPreference
-import java.lang.Exception
-import java.lang.NullPointerException
 
 
 class Home : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -29,30 +25,29 @@ class Home : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private var tabLayout: TabLayout? = null
     private var viewPager: ViewPager? = null
     private var spinner: Spinner? = null
-    val cityNames: ArrayList<String> = ArrayList()
+    private val cityNames: ArrayList<String> = ArrayList()
     private var isFirstTime = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
         setContentView(R.layout.activity_home)
         setSpinner()
 
 
         supportActionBar?.title = ParseUser.getCurrentUser().username
-        supportActionBar?.subtitle = Html.fromHtml("<small>" + ParseUser.getCurrentUser().email + "</small>")
 
 
         val currentUser = ParseUser.getCurrentUser()
         if (currentUser == null) {
             navigateToLogin()
         } else {
-            Log.i(TAG, currentUser.username)
+            Log.i(TAG.toString(), currentUser.username)
         }
 
-        viewPager = findViewById<ViewPager>(R.id.pager)
-        tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        viewPager = findViewById(R.id.pager)
+        tabLayout = findViewById(R.id.tabLayout)
         adapter = TabAdapter(supportFragmentManager)
         adapter?.addFragment(DonorFragment(), "Donor List")
         adapter?.addFragment(RecipientFragment(), "Reciepent List")
@@ -74,12 +69,12 @@ class Home : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
 
         spinner = findViewById(R.id.locSpinner)
-        spinner?.setOnItemSelectedListener(this)
+        spinner?.onItemSelectedListener = this
 
 
         val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, cityNames)
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner?.setAdapter(aa)
+        spinner?.adapter = aa
 
         try {
             val city = MyPreference.with(this).getString("city", "Dhaka")
@@ -128,32 +123,33 @@ class Home : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        val itemId = item.itemId
 
-        if (itemId == R.id.action_logout) {
-            ParseUser.logOut()
-            MyPreference.with(this).addBoolean("isTokenSaved", false).save()
-            navigateToLogin()
-        } else if (itemId == R.id.action_posting) {
-            val intent = Intent(this, FoodPosting::class.java)
-            startActivity(intent)
-        } else if (itemId == R.id.action_home) {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-            finish()
-        } else if (itemId == R.id.action_about) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        } else if (itemId == R.id.action_refresh) {
-
-
+        when (item.itemId) {
+            R.id.action_logout -> {
+                ParseUser.logOut()
+                MyPreference.with(this).addBoolean("isTokenSaved", false).save()
+                navigateToLogin()
+            }
+            R.id.action_posting -> {
+                val intent = Intent(this, FoodPosting::class.java)
+                startActivity(intent)
+            }
+            R.id.action_home -> {
+                val intent = Intent(this, Home::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.action_about -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
 
 
     companion object {
-        val TAG = Home::class.java.simpleName
+        val TAG: Any = Home::class.java.simpleName
     }
 
 }

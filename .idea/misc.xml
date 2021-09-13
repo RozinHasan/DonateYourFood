@@ -6,11 +6,13 @@
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/custome_input.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/edit_text_background.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/email_focused.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_donate_background.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_donor.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_email.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_email_focused.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_face_blue.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_face_orange.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_launcher_background.xml" value="0.10208333333333333" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_lock.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_lock_focused.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/drawable/ic_send_black_24dp.xml" value="0.10555555555555556" />
@@ -32,11 +34,14 @@
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/fragment_donor.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/fragment_recipient.xml" value="0.1" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/item_chat.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/item_donor.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/item_donor.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/item_reciepent.xml" value="0.10666666666666667" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/layout/user_rating_view.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/menu/food_posting.xml" value="0.1796875" />
         <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/menu/home.xml" value="0.1796875" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/mipmap-anydpi-v26/ic_donate.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/Rozin/Desktop/DonateYourFood/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>
