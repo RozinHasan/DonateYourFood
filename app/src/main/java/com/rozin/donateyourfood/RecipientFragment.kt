@@ -1,5 +1,6 @@
 package com.rozin.donateyourfood
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
@@ -71,6 +72,7 @@ class RecipientFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     }
 
+    @SuppressLint("NotifyDataSetChanged", "SimpleDateFormat")
     private fun loadReciepent(){
         if (isLoading) {
             return
@@ -114,15 +116,15 @@ class RecipientFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
 
                     val diff = convertedDatecurrent.time - convertedDatepost.time
-                    Log.d(TAG, "datediff=" + java.lang.Long.toString(diff))
+                    Log.d(TAG, "datediff=$diff")
                     val seconds = diff / 1000
-                    Log.d(TAG, "seconddiff=" + java.lang.Long.toString(seconds))
+                    Log.d(TAG, "seconddiff=$seconds")
 
                     val minutes = seconds / 60
-                    Log.d(TAG, "minutediff=" + java.lang.Long.toString(minutes))
+                    Log.d(TAG, "minutediff=$minutes")
 
                     val hours = minutes / 60
-                    Log.d(TAG, "hourdiff=" + java.lang.Long.toString(hours))
+                    Log.d(TAG, "hourdiff=$hours")
 
                     if (hours >= 24) {
                         postingdata.deleteInBackground()
@@ -184,7 +186,7 @@ class RecipientFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                 isLoading = false
                 refreshLayout!!.isRefreshing = false
 
-                Log.e(TAG, e.message)
+                e.message?.let { Log.e(TAG, it) }
                 val builder = AlertDialog.Builder(context)
                 builder.setMessage(e.message)
                         .setTitle(R.string.login_error_title)

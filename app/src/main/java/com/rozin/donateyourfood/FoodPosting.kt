@@ -101,16 +101,11 @@ class FoodPosting : AppCompatActivity() {
             if (drname.isEmpty() || draddress.isEmpty() || drzipcode.isEmpty() ||
                     drphone.isEmpty() || drnumpeople.isEmpty() || DorR == null ||
                     drzipcode.isEmpty() || drphone.isEmpty()) {
-                //                    AlertDialog.Builder builder = new AlertDialog.Builder(FoodPosting.this);
-                //                    builder.setBody(R.string.submit_error_message)
-                //                            .setTitle(R.string.signup_error_title)
-                //                            .setPositiveButton(android.R.string.ok, null);
-                //                    AlertDialog dialog = builder.create();
-                //                    dialog.show();
+                Toast.makeText(applicationContext, "Please fill out all the fields ", Toast.LENGTH_SHORT).show()
             } else {
 
                 val progressDialog = ProgressDialog(this);
-                progressDialog.setMessage("Posting your data to the server..."); // Setting Message
+//                progressDialog.setMessage("Posting your data to the server..."); // Setting Message
                 progressDialog.setTitle("Please wait"); // Setting Title
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
                 progressDialog.show(); // Display Progress Dialog
@@ -188,18 +183,15 @@ class FoodPosting : AppCompatActivity() {
         // Success!
         val builder1 = AlertDialog.Builder(this@FoodPosting)
         builder1.setMessage(R.string.submit_success)
-                .setTitle(R.string.submit_success_title)
-                .setPositiveButton(android.R.string.ok, object : DialogInterface.OnClickListener{
-                    override fun onClick(dialog: DialogInterface?, which: Int) {
-                        dialog?.dismiss()
-                        val intent = Intent(this@FoodPosting, Home::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
-                        finish()
-                    }
-
-                })
+                .setPositiveButton(android.R.string.ok
+                ) { dialog, _ ->
+                    dialog?.dismiss()
+                    val intent = Intent(this@FoodPosting, Home::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish()
+                }
         val dialog1 = builder1.create()
         dialog1.show()
         //mdrname.setText("",null);
@@ -238,7 +230,7 @@ class FoodPosting : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<FirebaseResponse>, t: Throwable?) {
-                Log.e("pushApiFailure :", t?.message)
+                t?.message?.let { Log.e("pushApiFailure :", it) }
             }
         })
 
@@ -268,7 +260,7 @@ class FoodPosting : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable?) {
-                Log.e("pushApiFailure :", t?.message)
+                t?.message?.let { Log.e("pushApiFailure :", it) }
             }
         })
 
@@ -292,7 +284,7 @@ class FoodPosting : AppCompatActivity() {
                 for (postingdata in mTokens) {
                     mtokens[i] = postingdata.getString("token")
                     builder.append(mtokens[i]).append(",")
-                    Log.e("token"+ i.toString(), mtokens[i])
+                    mtokens[i]?.let { Log.e("token"+ i.toString(), it) }
 
                     if (!tokenList.contains(mtokens[i])){
                         if (mtokens[i] != mytoken){
@@ -306,11 +298,11 @@ class FoodPosting : AppCompatActivity() {
                 Log.e("Token size", tokenList.size.toString())
 
                 allTokens = builder.deleteCharAt(builder.length - 1).toString()
-                Log.e("tokens", allTokens)
+                Log.e("tokens", allTokens!!)
 
 
             } else {
-                Log.e("", e.message)
+                e.message?.let { Log.e("", it) }
             }
         }
 

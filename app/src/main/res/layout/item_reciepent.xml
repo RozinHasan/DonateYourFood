@@ -95,17 +95,16 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <Button
+                <soup.neumorphism.NeumorphButton
                     android:id="@+id/recipient_accpetBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accept"
-                    android:background="@android:drawable/btn_default"/>
+                    android:text="Accept" />
 
                 <Button
                     android:id="@+id/recipient_accpetStatus"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
                     android:text="Chat"
                     android:gravity="center"
                     android:background="@android:drawable/btn_default"

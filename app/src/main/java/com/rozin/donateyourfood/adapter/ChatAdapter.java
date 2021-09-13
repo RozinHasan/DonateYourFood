@@ -1,5 +1,6 @@
 package com.rozin.donateyourfood.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,6 +44,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         return viewHolder;
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Message message = mMessages.get(position);
@@ -49,14 +52,16 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
         // If it is a message from myself it has to be displayed in one way
         if (isMe) {
+
             holder.imageMe.setVisibility(View.VISIBLE);
             holder.imageOther.setVisibility(View.INVISIBLE);
-            holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+            holder.body.setGravity(Gravity.END);
+
             holder.body.setBackground(mContext.getResources().getDrawable(R.drawable.sender_bg));
         } else { // And if it is from the another person chatting with me, it has to be displayed in other way
             holder.imageOther.setVisibility(View.VISIBLE);
-            holder.imageMe.setVisibility(View.INVISIBLE);
-            holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+            holder.body.setGravity(Gravity.RIGHT);            holder.imageMe.setVisibility(View.INVISIBLE);
+
             holder.body.setBackground(mContext.getResources().getDrawable(R.drawable.reciever_bg));
         }
 
@@ -89,7 +94,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         return mMessages.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageOther;
         ImageView imageMe;
         TextView body;

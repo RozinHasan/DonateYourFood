@@ -48,7 +48,6 @@ class Signup : AppCompatActivity() {
                     confirmp != password) {
                 val builder = AlertDialog.Builder(this@Signup)
                 builder.setMessage(R.string.signup_error_message)
-                        .setTitle(R.string.signup_error_title)
                         .setPositiveButton(android.R.string.ok, null)
                 val dialog = builder.create()
                 dialog.show()

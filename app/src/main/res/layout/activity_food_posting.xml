@@ -13,6 +13,9 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:id="@+id/radioGroupDR">
 
             <RadioButton
@@ -38,52 +41,58 @@
             android:layout_height="match_parent"
             android:padding="10dp">
 
+
             <RelativeLayout
                 android:id="@+id/approx"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:padding="15dp"
                 android:paddingTop="40dp"
                 android:paddingBottom="40dp">
 
                 <TextView
+                    android:id="@+id/DRpeople"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/DRpeople"
-                    android:layout_alignParentLeft="true"
-                    android:text="@string/numpeople_hint"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerInParent="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginStart="10dp" />
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/numpeople_hint"
+                    android:textSize="16sp" />
 
-                <EditText
-                    android:layout_width="match_parent"
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/peoplenum"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
+                    android:layout_alignTop="@+id/DRpeople"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toEndOf="@+id/DRpeople"
+                    android:layout_toRightOf="@+id/DRpeople"
                     android:ems="10"
+                    android:inputType="number"
                     android:maxLength="10"
                     android:textColor="#6B6B6B"
-                    android:id="@+id/peoplenum"
-                    android:layout_alignTop="@+id/DRpeople"
-                    android:layout_toRightOf="@+id/DRpeople"
-                    android:layout_toEndOf="@+id/DRpeople"
-                    android:textSize="16sp"/>
+                    android:textSize="16sp" />
 
             </RelativeLayout>
 
-
-            <EditText
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/DRname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:layout_below="@+id/approx"
                 android:hint="@string/name_hint"
                 android:textSize="16sp" />
 
-            <EditText
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:inputType="textPostalAddress"
                 android:ems="10"
                 android:id="@+id/DRaddress"
@@ -95,19 +104,25 @@
                 android:textIsSelectable="false" />
 
 
-
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/cities"
-                android:prompt="@string/city_prompt"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
 
-            <EditText
+                android:layout_above="@+id/post_button"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toEndOf="@+id/DRphone"
+                android:entries="@array/cities"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:prompt="@string/city_prompt" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/DRzipcode"
@@ -118,30 +133,31 @@
                 android:textSize="16sp"
                 android:maxLength="5"/>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:ems="10"
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/DRphone"
-                android:layout_below="@+id/DRzipcode"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:hint="@string/phone_hint"
-                android:textSize="16sp"
-                android:maxLength="14"/>
-
-
-            <Button
-                android:id="@+id/post_button"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/DRzipcode"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="15dp"
+                android:hint="@string/phone_hint"
+                android:inputType="phone"
+                android:maxLength="14"
+                android:textSize="16sp" />
+
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/post_button"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
                 android:layout_below="@+id/DRphone"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="53dp"
-                android:background="#03A9F4"
+                android:gravity="center"
                 android:text="@string/post_submit_text"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 
 

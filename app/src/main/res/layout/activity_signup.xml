@@ -8,72 +8,77 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".Signup">
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/signup_username"
-        android:layout_width="395dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="246dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:drawablePadding="13dp"
         android:hint="@string/username_text"
         android:textColor="#000000" />
 
-    <EditText
+
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/signup_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signup_username"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:ems="10"
+        android:layout_marginBottom="20dp"
+        android:drawablePadding="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:hint="@string/email_text"
         android:inputType="textEmailAddress"
         android:textColor="#000000" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/signup_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signup_email"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:ems="10"
+        android:layout_marginBottom="20dp"
+        android:drawablePadding="13dp"
         android:hint="@string/password_text"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:inputType="textPassword"
         android:textColor="#000000" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/signup_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signup_password"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:drawablePadding="13dp"
         android:ems="10"
         android:hint="@string/confirm_text"
         android:inputType="textPassword"
         android:textColor="#000000" />
 
 
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/signupbutton_text"
+    <soup.neumorphism.NeumorphButton
         android:id="@+id/signup_button"
-        android:layout_below="@+id/signup_confirm"
+        android:layout_width="270dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/signup_confirm"
         android:layout_centerHorizontal="true"
-        style="@style/Widget.MaterialComponents.Button"
-        android:background="#FFFFFF"
-        android:textSize="20sp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:text="@string/signupbutton_text"
+        android:textAlignment="center" />
 
 
 </RelativeLayout>

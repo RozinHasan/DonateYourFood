@@ -5,9 +5,11 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorWhite"
     android:gravity="center_vertical"
     app:layout_collapseMode="pin"
+    app:titleTextColor="@color/colorBlack"
+    app:subtitleTextColor="@color/colorBlack"
     app:layout_scrollFlags="scroll|enterAlways"
     app:theme="@style/MyToolbarTheme"
     app:title="@string/app_name"/>

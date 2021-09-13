@@ -130,7 +130,7 @@ class DonorAdapter(mItemList: ArrayList<ItemModel>, private val context: Context
 
 
                     } else {
-                        Log.e(DonorFragment.TAG, e.message)
+                        e.message?.let { Log.e(DonorFragment.TAG, it) }
                         val builder = AlertDialog.Builder(context)
                         builder.setMessage(e.message)
                                 .setTitle(R.string.login_error_title)

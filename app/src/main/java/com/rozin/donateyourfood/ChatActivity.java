@@ -1,10 +1,5 @@
 package com.rozin.donateyourfood;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,6 +13,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.parse.FindCallback;
 import com.parse.LogInCallback;
@@ -46,7 +46,7 @@ public class ChatActivity extends AppCompatActivity {
     // You know, this is used for logging purposes!
     static final String TAG = ChatActivity.class.getSimpleName();
     // This is the max number of messages to show
-    static final int MAX_CHAT_MESSAGES_TO_SHOW = 50;
+    static final int MAX_CHAT_MESSAGES_TO_SHOW = 100;
 
     static final String USER_ID_KEY = "userId";
     private static final String TOTAL_RATING_KEY = "numOfRatings";
@@ -351,14 +351,14 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void done(List<ParseObject> li, ParseException e) {
                 if (li != null && li.size() > 0) {
-                    Log.d("Faheem", "li size" + li.size());
+                    Log.d("Rozin", "li size" + li.size());
                     for (int i = li.size() - 1; i >= 0; i--) {
                         ParseObject po = li.get(i);
                         Conversation c = new Conversation(po.getString("message"), po.getCreatedAt(),
                                 po.getString("sender"));
                         convList.add(c);
 
-                        Log.d("Faheem", "li size" + po.getString("message") + " " + po.getString("sender") + "");
+                        Log.d("Rozin", "li size" + po.getString("message") + " " + po.getString("sender") + "");
 
                         if (lastMsgDate == null || lastMsgDate.before(c.getDate()))
                             lastMsgDate = c.getDate();
@@ -462,7 +462,7 @@ public class ChatActivity extends AppCompatActivity {
     private class RatingbarTask extends AsyncTask<Void, Void, Void> {
         private String ratingkey;
         private int starcount;
-        private  Context context;
+        private Context context;
 
         RatingbarTask(Context context, String ratingkey, int starcount) {
             this.context = context;
@@ -484,7 +484,7 @@ public class ChatActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            updateRatings(recieverName, ratingkey , starcount);
+            updateRatings(recieverName, ratingkey, starcount);
             return null;
         }
 
@@ -503,14 +503,14 @@ public class ChatActivity extends AppCompatActivity {
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null){
-                    objects.get(0).increment(ratingkey , 1);
+                if (e == null) {
+                    objects.get(0).increment(ratingkey, 1);
                     objects.get(0).increment(TOTAL_RATING_KEY);
 
                     objects.get(0).saveInBackground(new SaveCallback() {
                         @Override
                         public void done(ParseException e) {
-                            if (e == null){
+                            if (e == null) {
                                 /*calculate rating*/
                                 int oneStar = objects.get(0).getInt("onestar");
                                 int twoStar = objects.get(0).getInt("twostar");
@@ -519,16 +519,16 @@ public class ChatActivity extends AppCompatActivity {
                                 int fiveStar = objects.get(0).getInt("fivestar");
 
 
-                                int rating = (1*oneStar + 2*twoStar + 3*threeStar + 4*fourStar + 5*fiveStar)/ (oneStar+twoStar + threeStar+fourStar+fiveStar);
-                                givefoodUserRatings(recieverId , rating, starcount);
+                                int rating = (1 * oneStar + 2 * twoStar + 3 * threeStar + 4 * fourStar + 5 * fiveStar) / (oneStar + twoStar + threeStar + fourStar + fiveStar);
+                                givefoodUserRatings(recieverId, rating, starcount);
 
-                            }else {
+                            } else {
                                 mProgressDialog.dismiss();
                                 showErrorDialog(e.getLocalizedMessage());
                             }
                         }
                     });
-                }else {
+                } else {
                     mProgressDialog.dismiss();
                     showErrorDialog(e.getLocalizedMessage());
                 }
@@ -536,34 +536,34 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
-    private void givefoodUserRatings(String userId , int rating, int starcount){
+    private void givefoodUserRatings(String userId, int rating, int starcount) {
         ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("foodtable");
         query.whereEqualTo("uid", userId);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null){
-                    if (objects.size() > 0){
+                if (e == null) {
+                    if (objects.size() > 0) {
                         objects.get(0).put("ratings", rating);
                         objects.get(0).saveInBackground(new SaveCallback() {
                             @Override
                             public void done(ParseException e) {
-                                if (e == null){
+                                if (e == null) {
                                     mProgressDialog.dismiss();
-                                    showErrorDialog("Thanks for giving "+ String.valueOf(starcount) + "star.");
-                                }else {
+                                    showErrorDialog("Thanks for giving " + String.valueOf(starcount) + "star.");
+                                } else {
                                     mProgressDialog.dismiss();
                                     showErrorDialog(e.getLocalizedMessage());
                                 }
                             }
                         });
-                    }else {
+                    } else {
                         mProgressDialog.dismiss();
                         showErrorDialog("Error! \nThis user didn't contribute yet or no posts found for this user. Ask this user to make a food post first.");
                     }
 
 
-                }else {
+                } else {
                     mProgressDialog.dismiss();
                     showErrorDialog(e.getLocalizedMessage());
                 }

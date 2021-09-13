@@ -30,9 +30,9 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var mSignUpTextView: Button
-    lateinit var mLoginTextView: Button
-    lateinit var mHomeTextView: Button
+    private lateinit var mSignUpTextView: Button
+    private lateinit var mLoginTextView: Button
+    private lateinit var mHomeTextView: Button
     private var airLocation: AirLocation? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,20 +44,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getRegionName(location: Location): String {
-        var regioName = "";
+        var regionName = "";
 
         val gcd = Geocoder(this, Locale.getDefault())
         try {
             val addresses = gcd.getFromLocation(location.latitude, location.longitude, 1);
             if (addresses.size > 0) {
-                regioName = addresses.get(0).getLocality();
+                regionName = addresses[0].locality;
             }
         } catch (e: Exception) {
             e.printStackTrace()
         }
 
 
-        return regioName
+        return regionName
 
     }
 
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         airLocation = AirLocation(this , true , true , object : AirLocation.Callbacks{
             override fun onFailed(locationFailedEnum: AirLocation.LocationFailedEnum) {
                 MyPreference.with(this@MainActivity).addString("city" , "Dhaka").save()
-                MyPreference.with(this@MainActivity).addBoolean("isCityfetched" , true).save()
+                MyPreference.with(this@MainActivity).addBoolean("isCitified" , true).save()
 
                 val intent = Intent(this@MainActivity, Home::class.java)
                 startActivity(intent)
@@ -207,13 +207,13 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<DeviceListModel>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "Something went wrong", Toast.LENGTH_SHORT).show()
-                Log.e("OnBeacon Failure :", t.message)
+                t.message?.let { Log.e("OnBeacon Failure :", it) }
             }
         })
 
     }
 
     companion object {
-        val TAG = MainActivity::class.java.getSimpleName()
+        val TAG: String = MainActivity::class.java.simpleName
     }
 }

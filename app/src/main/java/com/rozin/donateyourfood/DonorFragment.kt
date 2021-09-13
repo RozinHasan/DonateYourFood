@@ -168,7 +168,7 @@ class DonorFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                 isLoading = false
                 refreshLayout!!.isRefreshing = false
 
-                Log.e(TAG, e.message)
+                e.message?.let { Log.e(TAG, it) }
                 val builder = AlertDialog.Builder(context)
                 builder.setMessage(e.message)
                         .setTitle(R.string.login_error_title)

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#3F51B5</color>
-    <color name="colorAccent">#263238</color>
     <color name="yellow">#FFCD43</color>
+    <color name="colorTextWhite">#ffffff</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorTextBlack">#000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorAccent">#3F51B5</color>
+    <color name="colorEditText">#14000000</color>
+    <color name="colorButton">#0E68FF</color>
+    <color name="colorButtonText">#ffffff</color>
+    <color name="colorPlaceholder">#505050</color>
+    <color name="colorTextPrimary">#0E68FF</color>
 </resources>

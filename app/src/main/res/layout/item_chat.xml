@@ -15,17 +15,14 @@
 
     <TextView
         android:id="@+id/tvBody"
-        android:layout_width="221dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="40dp"
-        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/reciever_bg"
-        android:ellipsize="end"
-        android:lines="1"
-        android:padding="20dp"
-        android:text="kjdskdvnkjsdbvnkj"
-        android:textSize="18sp"><!-- This line is added to support marginEnd on devices with API less than 17 -->
+        android:layout_weight="0.2"
+        android:padding="15dp"
+        android:textSize="15sp"><!-- This line is added to support marginEnd on devices with API less than 17 -->
     </TextView>
+
     <ImageView
         android:id="@+id/ivProfileMe"
         android:contentDescription="@string/iC_profile_me"

@@ -103,7 +103,6 @@ class Home : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         if (isFirstTime){
             finish()
-            startActivity(Intent(this, MainActivity::class.java))
         }
 
         isFirstTime = true
