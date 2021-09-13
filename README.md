@@ -9,9 +9,7 @@
    - go to app settings from the project dashboard and click on security and keys
    - copy the application id and client key and paste them in the strings.xml file in the project
    - sync the app and then build, voila!
-  
-   I am still working on push notifications, so the firebase dependencies are currently not in use
- 
+   
 # **Login / Signup Screen**
 
 People can sign up using their email to either donate their excess food or receive the excess food donated by others.
@@ -21,7 +19,7 @@ People can sign up using their email to either donate their excess food or recei
 
 # **Form Screen**
 
-You can create a food as either a food donator or a food receiver
+You can create a food post as either a food donator or a food receiver
 
 <img src="images/form.png" width = "200">
 
@@ -34,7 +32,7 @@ Tabview showing all the posts in different regions about either people wanting t
 
 # **In app messaging**
 
-After a post has been accepted by a user, that user and the poster can communicate directly in the app by using the in app messaging
+After a post has been accepted by a user, that user and the poster can communicate directly in the app by using the in app messaging. The messaging feature is built from scratch.
 
 <img src = "images/message.png" width = "200">
 
