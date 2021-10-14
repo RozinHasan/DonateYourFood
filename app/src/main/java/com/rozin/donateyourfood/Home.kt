@@ -61,7 +61,20 @@ class Home : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     private fun setSpinner() {
-        val cities = arrayOf("Dhaka", "Chittagong", "Rajshahi", "Khulna", "Sylhet", "Mymensingh", "Barishal", "Rangpur", "Comilla", "Narayanganj", "Gazipur", "Gopalganj")
+        val cities = arrayOf(
+            "Dhaka",
+            "Chittagong",
+            "Rajshahi",
+            "Khulna",
+            "Sylhet",
+            "Mymensingh",
+            "Barishal",
+            "Rangpur",
+            "Comilla",
+            "Narayanganj",
+            "Gazipur",
+            "Gopalganj"
+        )
 
         cityNames.clear()
         for (c in cities) {
@@ -80,10 +93,9 @@ class Home : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             val city = MyPreference.with(this).getString("city", "Dhaka")
             val spinnerPosition = aa.getPosition(city)
             spinner?.setSelection(spinnerPosition)
-        }catch (ex:NullPointerException){
+        } catch (ex: NullPointerException) {
             ex.printStackTrace()
         }
-
 
 
     }
@@ -96,7 +108,7 @@ class Home : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         MyPreference.with(this).addString("city", cityNames[position]).save()
         MyPreference.with(this).addInt("pos", position).save()
 
-        if (isFirstTime){
+        if (isFirstTime) {
             finish()
         }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.rozin.donateyourfood">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,14 +22,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.rozin.donateyourfood.ChatActivity"></activity>
+        <activity android:name="com.rozin.donateyourfood.ChatActivity" />
         <activity android:name="com.rozin.donateyourfood.FoodPosting" />
         <activity android:name="com.rozin.donateyourfood.Signup" />
         <activity android:name="com.rozin.donateyourfood.Login" />
         <activity android:name="com.rozin.donateyourfood.Home" />
         <activity
             android:name="com.rozin.donateyourfood.MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

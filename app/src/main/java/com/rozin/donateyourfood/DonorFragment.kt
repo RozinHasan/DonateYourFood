@@ -108,15 +108,15 @@ class DonorFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
 
                     val diff = convertedDatecurrent.time - convertedDatepost.time
-                    Log.d(TAG, "datediff=" + java.lang.Long.toString(diff))
+                    Log.d(TAG, "datediff=$diff")
                     val seconds = diff / 1000
-                    Log.d(TAG, "seconddiff=" + java.lang.Long.toString(seconds))
+                    Log.d(TAG, "seconddiff=$seconds")
 
                     val minutes = seconds / 60
-                    Log.d(TAG, "minutediff=" + java.lang.Long.toString(minutes))
+                    Log.d(TAG, "minutediff=$minutes")
 
                     val hours = minutes / 60
-                    Log.d(TAG, "hourdiff=" + java.lang.Long.toString(hours))
+                    Log.d(TAG, "hourdiff=$hours")
 
                     if (hours >= 24) {
                         postingdata.deleteInBackground()

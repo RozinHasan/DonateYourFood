@@ -7,17 +7,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-import androidx.fragment.app.ListFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
-import com.parse.FindCallback
-import com.parse.ParseException
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import com.rozin.donateyourfood.adapter.DonorAdapter
@@ -61,19 +57,19 @@ class RecipientFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onRefresh() {
         refreshLayout!!.isRefreshing = true
-        loadReciepent()
+        loadRecipient()
     }
 
 
     override fun onResume() {
         super.onResume()
-        loadReciepent()
+        loadRecipient()
 
 
     }
 
     @SuppressLint("NotifyDataSetChanged", "SimpleDateFormat")
-    private fun loadReciepent(){
+    private fun loadRecipient(){
         if (isLoading) {
             return
         }
@@ -140,7 +136,6 @@ class RecipientFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                 recipientList.clear()
                 for (postingdata in mRecipients) {
 
-//                    recipients[i] = postingdata.getString("full")
 
                     val itemModel = ItemModel()
                     itemModel.organization = postingdata.getString("name")

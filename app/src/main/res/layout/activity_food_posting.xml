@@ -120,27 +120,32 @@
                 android:prompt="@string/city_prompt" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/DRzipcode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/DRzipcode"
                 android:layout_below="@+id/DRaddress"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
                 android:hint="@string/zipcode_hint"
-                android:textSize="16sp"
-                android:maxLength="5"/>
+                android:inputType="number"
+                android:maxLength="5"
+                android:textSize="16sp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/DRphone"
                 android:layout_width="170dp"
-                android:layout_margin="10dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/DRzipcode"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:hint="@string/phone_hint"
                 android:inputType="phone"
                 android:maxLength="14"

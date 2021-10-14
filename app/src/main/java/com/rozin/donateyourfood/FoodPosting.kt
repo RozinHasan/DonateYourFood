@@ -25,6 +25,7 @@ import com.rozin.donateyourfood.models.rawPushModel
 import com.rozin.donateyourfood.networks.ApiService
 import com.rozin.donateyourfood.networks.RetrofitBuilder
 import com.rozin.donateyourfood.utils.MyPreference
+import kotlinx.android.synthetic.main.activity_signup.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
